@@ -6,7 +6,7 @@ import 'package:shopping_ui_project/model/men_model.dart';
 
 import 'package:shopping_ui_project/model/products.dart';
 import 'package:shopping_ui_project/views/page/auth_page.dart';
-import 'package:shopping_ui_project/views/page/shop_page.dart';
+import 'package:shopping_ui_project/views/page/home_page.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

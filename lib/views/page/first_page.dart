@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:shopping_ui_project/views/page/shop_page.dart';
+import 'package:shopping_ui_project/views/page/home_page.dart';
 
 class FirstPage extends StatefulWidget {
   const FirstPage({super.key});

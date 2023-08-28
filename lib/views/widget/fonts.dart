@@ -16,15 +16,15 @@ var fontsListTile = GoogleFonts.oswald(
   fontWeight: FontWeight.w500,
 );
 
-var fontsPrice = GoogleFonts.oswald(
+var fontsPrice = GoogleFonts.poppins(
   fontSize: 20,
   color: Colors.pink,
   fontWeight: FontWeight.w500,
 );
 
-var fontsNameShirt = GoogleFonts.ubuntu(
+var fontsNameShirt = GoogleFonts.poppins(
   fontSize: 17,
-  fontWeight: FontWeight.w400,
+  fontWeight: FontWeight.w500,
 );
 
 var fontsButton = GoogleFonts.oswald(
@@ -37,12 +37,18 @@ var fontsTextfield = GoogleFonts.ubuntu(
   fontWeight: FontWeight.w400,
 );
 
-var fontsPriceDetail = GoogleFonts.oswald(
+var fontsPriceDetail = GoogleFonts.poppins(
   fontSize: 25,
-  color: Colors.black,
+  color: Colors.blueGrey,
   fontWeight: FontWeight.w500,
 );
-var fontsNameShirtDetail = GoogleFonts.ubuntu(
+var fontsNameShirtDetail = GoogleFonts.poppins(
   fontSize: 20,
   fontWeight: FontWeight.w600,
+);
+
+var fontsTopic = GoogleFonts.poppins(
+  fontSize: 20,
+  fontWeight: FontWeight.w500,
+  color: Color.fromARGB(255, 54, 72, 81),
 );

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_ui_project/constant/route.dart';
 import 'package:shopping_ui_project/model/women_model.dart';
-import 'package:shopping_ui_project/views/page/shop_page.dart';
+import 'package:shopping_ui_project/views/page/home_page.dart';
 import 'package:shopping_ui_project/views/widget/my_bottomnavigat.dart';
 
 import '../widget/fonts.dart';
