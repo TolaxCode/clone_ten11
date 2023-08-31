@@ -2,15 +2,13 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
-import 'package:shopping_ui_project/constant/constant.dart';
 import 'package:shopping_ui_project/constant/route.dart';
 import 'package:shopping_ui_project/views/page/signin_page.dart';
-import 'package:shopping_ui_project/views/widget/fonts.dart';
+import 'package:shopping_ui_project/constant/fonts.dart';
 import 'package:shopping_ui_project/views/widget/my_button.dart';
 import 'package:shopping_ui_project/views/widget/my_textfield.dart';
 import '../widget/my_smallButton.dart';
-import 'first_page.dart';
+import 'intro_page.dart';
 
 class SignUpPage extends StatefulWidget {
   SignUpPage({
@@ -52,7 +50,7 @@ class _SignUpPageState extends State<SignUpPage> {
         // );
         //pop loading circle
         Navigator.pop(context);
-        nextScreen(context, const FirstPage());
+        nextScreen(context, const IntroPage());
       } else {
         //comfirm != password
         // showMessageError(

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_ui_project/views/widget/fonts.dart';
+import 'package:shopping_ui_project/constant/fonts.dart';
 
 class MyTextFieldWidget extends StatelessWidget {
   late bool obscureText;

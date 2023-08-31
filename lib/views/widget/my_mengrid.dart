@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_ui_project/constant/route.dart';
+import 'package:shopping_ui_project/model/color_products_model.dart';
 import 'package:shopping_ui_project/model/men_model.dart';
 import 'package:shopping_ui_project/views/page/mendetail_page.dart';
-import 'package:shopping_ui_project/views/widget/fonts.dart';
+import 'package:shopping_ui_project/constant/fonts.dart';
 
 class MyMenGideWidget extends StatefulWidget {
   const MyMenGideWidget({
@@ -30,11 +31,11 @@ class _MyMenGideWidgetState extends State<MyMenGideWidget> {
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             crossAxisSpacing: width * 0.01,
-            childAspectRatio: height * 0.00058,
+            childAspectRatio: height * 0.00055,
             mainAxisSpacing: height * 0.005,
           ),
           itemBuilder: (context, index) {
-            var data = listMenModel[index];
+            var menModel = listMenModel[index];
             return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -43,19 +44,19 @@ class _MyMenGideWidgetState extends State<MyMenGideWidget> {
                     nextScreen(
                       context,
                       MenDetailPage(
-                        menModel: data,
+                        menModel: menModel,
                       ),
                     );
                   },
                   child: Hero(
-                    tag: data.image,
+                    tag: menModel.image,
                     child: Container(
                       height: height * 0.36,
                       width: width,
                       decoration: BoxDecoration(
                         //color: Colors.red,
                         image: DecorationImage(
-                          image: AssetImage(data.image),
+                          image: AssetImage(menModel.image),
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -80,7 +81,7 @@ class _MyMenGideWidgetState extends State<MyMenGideWidget> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              '\$${data.price}',
+                              '${menModel.price}\$',
                               style: fontsPrice,
                             ),
                             const Icon(Icons.bookmark_outline)
@@ -90,11 +91,11 @@ class _MyMenGideWidgetState extends State<MyMenGideWidget> {
                       //Name Shirt
                       Padding(
                         padding: EdgeInsets.only(
-                          top: height * 0.009,
+                          top: height * 0.003,
                           left: width * 0.015,
                         ),
                         child: Text(
-                          data.name,
+                          menModel.name,
                           style: fontsNameShirt,
                           overflow: TextOverflow.ellipsis,
                         ),
@@ -102,88 +103,30 @@ class _MyMenGideWidgetState extends State<MyMenGideWidget> {
                       //Color
                       Padding(
                         padding: EdgeInsets.only(
-                          top: height * 0.015,
+                          top: height * 0.012,
                           left: width * 0.015,
                         ),
                         child: Row(
-                          children: [
-                            //color
-                            Padding(
-                              padding: EdgeInsets.only(
-                                right: width * 0.02,
-                              ),
-                              child: Container(
-                                height: height * 0.024,
-                                width: width * 0.053,
-                                decoration: BoxDecoration(
-                                  color: data.color,
-                                  border: data.color == null
-                                      ? null
-                                      : Border.all(
-                                          width: 1,
-                                          color: Colors.black26,
-                                        ),
+                          children: List.generate(
+                            listColors.length,
+                            (index) {
+                              return Padding(
+                                padding: EdgeInsets.only(
+                                  right: width * 0.02,
                                 ),
-                              ),
-                            ),
-                            //color1
-                            Padding(
-                              padding: EdgeInsets.only(
-                                right: width * 0.02,
-                              ),
-                              child: Container(
-                                height: height * 0.024,
-                                width: width * 0.053,
-                                decoration: BoxDecoration(
-                                  color: data.color1,
-                                  border: data.color1 == null
-                                      ? null
-                                      : Border.all(
-                                          width: 1,
-                                          color: Colors.black26,
-                                        ),
+                                child: Container(
+                                  height: height * 0.024,
+                                  width: width * 0.053,
+                                  decoration: BoxDecoration(
+                                    color: listColors[index],
+                                    border: Border.all(
+                                      color: Colors.black26,
+                                    ),
+                                  ),
                                 ),
-                              ),
-                            ),
-                            //color2
-                            Padding(
-                              padding: EdgeInsets.only(
-                                right: width * 0.02,
-                              ),
-                              child: Container(
-                                height: height * 0.024,
-                                width: width * 0.053,
-                                decoration: BoxDecoration(
-                                  color: data.color2,
-                                  border: data.color2 == null
-                                      ? null
-                                      : Border.all(
-                                          width: 1,
-                                          color: Colors.black26,
-                                        ),
-                                ),
-                              ),
-                            ),
-                            //color3
-                            Padding(
-                              padding: EdgeInsets.only(
-                                right: width * 0.02,
-                              ),
-                              child: Container(
-                                height: height * 0.024,
-                                width: width * 0.053,
-                                decoration: BoxDecoration(
-                                  color: data.color3,
-                                  border: data.color3 == null
-                                      ? null
-                                      : Border.all(
-                                          width: 1,
-                                          color: Colors.black26,
-                                        ),
-                                ),
-                              ),
-                            ),
-                          ],
+                              );
+                            },
+                          ),
                         ),
                       ),
                     ],

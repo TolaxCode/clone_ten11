@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:shopping_ui_project/constant/route.dart';
 import 'package:shopping_ui_project/model/women_model.dart';
-import 'package:shopping_ui_project/views/widget/fonts.dart';
+import 'package:shopping_ui_project/views/page/womendetail_page.dart';
+import 'package:shopping_ui_project/constant/fonts.dart';
 
 class MyWomenGideWidget extends StatelessWidget {
   const MyWomenGideWidget({super.key});
@@ -31,14 +32,20 @@ class MyWomenGideWidget extends StatelessWidget {
             return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Container(
-                  height: height * 0.36,
-                  width: width,
-                  decoration: BoxDecoration(
-                    //color: Colors.red,
-                    image: DecorationImage(
-                      image: AssetImage(data.image),
-                      fit: BoxFit.cover,
+                //image
+                GestureDetector(
+                  onTap: () {
+                    nextScreen(context, WomenDetailPage(wowmenModel: data));
+                  },
+                  child: Container(
+                    height: height * 0.36,
+                    width: width,
+                    decoration: BoxDecoration(
+                      //color: Colors.red,
+                      image: DecorationImage(
+                        image: AssetImage(data.image),
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                 ),
@@ -55,14 +62,20 @@ class MyWomenGideWidget extends StatelessWidget {
                         padding: EdgeInsets.only(
                           left: width * 0.02,
                         ),
-                        child: Text(
-                          '\$${data.price}',
-                          style: fontsPrice,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              '\$${data.price}',
+                              style: fontsPrice,
+                            ),
+                            const Icon(Icons.bookmark_border)
+                          ],
                         ),
                       ),
                       Padding(
                         padding: EdgeInsets.only(
-                          top: height * 0.009,
+                          top: height * 0.007,
                           left: width * 0.02,
                         ),
                         child: Text(

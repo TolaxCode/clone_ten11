@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:shopping_ui_project/model/men_model.dart';
 import 'package:shopping_ui_project/model/women_model.dart';
 
@@ -10,7 +11,7 @@ class Products extends ChangeNotifier {
 
   //add item to cart
   void addMenItemToCart(MenModel menModel) {
-    _cartMenItem.add(menModel);
+    cartMenItem.add(menModel);
     notifyListeners();
   }
 
@@ -21,10 +22,10 @@ class Products extends ChangeNotifier {
   }
 
   //calculate price
-  double calculateMenTotal(int index) {
+  double calculateMenTotal(MenModel menModel) {
     double total = 0;
     for (int i = 0; i < cartMenItem.length; i++) {
-      total += cartMenItem[index].price;
+      total += menModel.price;
     }
     notifyListeners();
     return total;

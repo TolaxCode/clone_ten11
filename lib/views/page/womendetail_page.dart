@@ -1,30 +1,37 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'package:shopping_ui_project/constant/route.dart';
-
 import 'package:shopping_ui_project/model/men_model.dart';
 import 'package:shopping_ui_project/model/products.dart';
+import 'package:shopping_ui_project/model/women_model.dart';
 
 import 'package:shopping_ui_project/views/page/card_page.dart';
-import 'package:shopping_ui_project/views/page/mencollection_page.dart';
-import 'package:shopping_ui_project/constant/fonts.dart';
-import 'package:shopping_ui_project/views/widget/my_image_color_size.dart';
 
-class MenDetailPage extends StatelessWidget { 
-  MenModel menModel;
-  MenDetailPage({
+import 'package:shopping_ui_project/views/page/womencollection_page.dart';
+import 'package:shopping_ui_project/constant/fonts.dart';
+
+class WomenDetailPage extends StatelessWidget {
+  WowmenModel wowmenModel;
+  WomenDetailPage({
     super.key,
-    required this.menModel,
+    required this.wowmenModel,
   });
+
+  List listsize = [
+    'S',
+    'M',
+    'L',
+    'XL',
+    '2XL',
+  ];
 
   @override
   Widget build(BuildContext context) {
     // ignore: unused_element
     void addProudctMenToCart(MenModel menModel) {
       Provider.of<Products>(context, listen: false).addMenItemToCart(menModel);
-      showMessageSuccess(context);
+      print('Sucessfull');
     }
 
     var height = MediaQuery.of(context).size.height;
@@ -44,8 +51,7 @@ class MenDetailPage extends StatelessWidget {
               children: [
                 //button back
                 IconButton(
-                  onPressed: () =>
-                      nextScreen(context, const MenCollectionPage()),
+                  onPressed: () => nextScreen(context, WomenCollectionPage()),
                   icon: const Icon(
                     Icons.arrow_back,
                     color: Colors.black,
@@ -54,11 +60,7 @@ class MenDetailPage extends StatelessWidget {
                 ),
                 //button shopping
                 IconButton(
-                  onPressed: () => nextScreen(
-                      context,
-                      CardPage(
-                        menModel: menModel,
-                      )),
+                  onPressed: () {},
                   icon: const Icon(
                     Icons.shopping_bag_outlined,
                     color: Colors.black,
@@ -70,38 +72,39 @@ class MenDetailPage extends StatelessWidget {
             flexibleSpace: FlexibleSpaceBar(
               centerTitle: true,
               background: Hero(
-                tag: menModel.image,
+                tag: wowmenModel.image,
                 child: Image.asset(
-                  menModel.image,
+                  wowmenModel.image,
                   fit: BoxFit.cover,
                 ),
               ),
             ),
           ),
           //detail price name size color
-          MyImageColorSizeDesWidget(
-            height: height,
-            width: width,
-            menModel: menModel,
-           
-          ),
+          // MyImageColorSizeDesWidget(
+          //   height: height,
+          //   width: width,
+          //   wowmenModel: wowmenModel,
+          //   listsize: listsize,
+          // ),
         ],
       ),
       //bottomNavigatebar
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(8.0),
         //btn add to bag
-        child: Container(
-          height: height * 0.09,
-          width: width,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-          ),
-          child: CupertinoButton(
-            color: Colors.black,
-            onPressed: () {
-              addProudctMenToCart(menModel);
-            },
+        child: GestureDetector(
+          onTap: () {
+            
+          },
+          child: Container(
+            alignment: Alignment.center,
+            height: height * 0.09,
+            width: width,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              color: Colors.black,
+            ),
             child: Text(
               'Add To Bag',
               style: fontsButton,

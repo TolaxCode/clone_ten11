@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shopping_ui_project/views/page/signin_page.dart';
-import 'package:shopping_ui_project/views/widget/fonts.dart';
+import 'package:shopping_ui_project/constant/fonts.dart';
 
 class MyDrawerWidget extends StatefulWidget {
   const MyDrawerWidget({super.key});

@@ -4,9 +4,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import 'package:shopping_ui_project/constant/route.dart';
-import 'package:shopping_ui_project/views/page/first_page.dart';
+import 'package:shopping_ui_project/views/page/intro_page.dart';
 import 'package:shopping_ui_project/views/page/signup_page.dart';
-import 'package:shopping_ui_project/views/widget/fonts.dart';
+import 'package:shopping_ui_project/constant/fonts.dart';
 import 'package:shopping_ui_project/views/widget/my_button.dart';
 import 'package:shopping_ui_project/views/widget/my_textfield.dart';
 import '../widget/my_smallButton.dart';
@@ -56,7 +56,7 @@ class _SignInPageState extends State<SignInPage> {
       // );
       //pop loading circle
       Navigator.pop(context);
-      nextScreen(context, const FirstPage());
+      nextScreen(context, const IntroPage());
     } on FirebaseAuthException catch (e) {
       //pop loading circle
       Navigator.pop(context);

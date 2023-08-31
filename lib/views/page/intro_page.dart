@@ -2,14 +2,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shopping_ui_project/views/page/home_page.dart';
 
-class FirstPage extends StatefulWidget {
-  const FirstPage({super.key});
+class IntroPage extends StatefulWidget {
+  const IntroPage({super.key});
 
   @override
-  State<FirstPage> createState() => _FirstPageState();
+  State<IntroPage> createState() => _IntroPageState();
 }
 
-class _FirstPageState extends State<FirstPage> {
+class _IntroPageState extends State<IntroPage> {
   @override
   void initState() {
     super.initState();
@@ -20,7 +20,7 @@ class _FirstPageState extends State<FirstPage> {
         Navigator.of(context).pushReplacement(
           CupertinoPageRoute(
             builder: (context) {
-              return ShopPage();
+              return const HomePage();
             },
           ),
         );

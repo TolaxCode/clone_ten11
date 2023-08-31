@@ -4,7 +4,7 @@ import 'package:shopping_ui_project/model/women_model.dart';
 import 'package:shopping_ui_project/views/page/home_page.dart';
 import 'package:shopping_ui_project/views/widget/my_bottomnavigat.dart';
 
-import '../widget/fonts.dart';
+import '../../constant/fonts.dart';
 import '../widget/my_womengride.dart';
 
 class WomenCollectionPage extends StatelessWidget {
@@ -22,7 +22,7 @@ class WomenCollectionPage extends StatelessWidget {
                 children: [
                   IconButton(
                     onPressed: () {
-                      nextScreen(context, ShopPage());
+                      nextScreen(context, const HomePage());
                     },
                     icon: const Icon(
                       Icons.arrow_back,
@@ -31,17 +31,18 @@ class WomenCollectionPage extends StatelessWidget {
                   ),
                   Text(
                     'Women (${listWowmenModel.length} Items)',
-                    style: fontDrawer,
+                    style: fontsNameShirtDetail,
                   ),
                   IconButton(
                     onPressed: () {},
                     icon: const Icon(
                       Icons.shopping_bag_outlined,
-                      size: 35,
+                      size: 30,
                     ),
                   ),
                 ],
               ),
+              //women gride
               const MyWomenGideWidget(),
             ],
           ),

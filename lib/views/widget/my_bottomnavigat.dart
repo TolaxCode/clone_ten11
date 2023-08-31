@@ -1,9 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_ui_project/constant/fonts.dart';
 
-class MyBottomNavigatWidget extends StatelessWidget {
-  const MyBottomNavigatWidget({
-    super.key,
-  });
+class MyBottomNavigatWidget extends StatefulWidget {
+  const MyBottomNavigatWidget({super.key});
+
+  @override
+  State<MyBottomNavigatWidget> createState() => _MyBottomNavigatWidgetState();
+}
+
+int currentIndex = 0;
+
+class _MyBottomNavigatWidgetState extends State<MyBottomNavigatWidget> {
+  void _selectPage(int index) {
+    setState(() {
+      currentIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -11,20 +23,24 @@ class MyBottomNavigatWidget extends StatelessWidget {
       fixedColor: Colors.black,
       iconSize: 34,
       type: BottomNavigationBarType.fixed,
+      selectedLabelStyle: fontsNameShirt, //select
+      unselectedLabelStyle: fontsNameShirt, //unselect
+      currentIndex: currentIndex,
+      onTap: (index) => _selectPage(index),
       items: const [
         BottomNavigationBarItem(
           icon: Icon(
-            Icons.home_filled,
+            Icons.home_outlined,
             color: Colors.black,
           ),
           label: 'Home',
         ),
         BottomNavigationBarItem(
           icon: Icon(
-            Icons.local_mall_outlined,
+            Icons.menu,
             color: Colors.black,
           ),
-          label: 'Bage',
+          label: 'Menu',
         ),
         BottomNavigationBarItem(
           icon: Icon(
@@ -42,10 +58,10 @@ class MyBottomNavigatWidget extends StatelessWidget {
         ),
         BottomNavigationBarItem(
           icon: Icon(
-            Icons.notifications_active_outlined,
+            Icons.account_circle_outlined,
             color: Colors.black,
           ),
-          label: 'Notification',
+          label: 'Profile',
         ),
       ],
     );

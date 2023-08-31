@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_ui_project/model/color_products_model.dart';
 import 'package:shopping_ui_project/model/men_model.dart';
-import 'package:shopping_ui_project/views/widget/fonts.dart';
+import 'package:shopping_ui_project/constant/fonts.dart';
 
 class MyImageColorSizeDesWidget extends StatefulWidget {
   const MyImageColorSizeDesWidget({
@@ -8,22 +9,49 @@ class MyImageColorSizeDesWidget extends StatefulWidget {
     required this.height,
     required this.width,
     required this.menModel,
-    required this.listsize,
   });
 
   final double height;
   final double width;
   final MenModel menModel;
-  final List listsize;
 
   @override
   State<MyImageColorSizeDesWidget> createState() =>
       _MyImageColorSizeDesWidgetState();
 }
 
+//color
+int currentColor = 0;
+//size
 int currentSize = 0;
+List<String> listsize = [
+  'S',
+  'M',
+  'L',
+  'XL',
+  '2XL',
+];
 
 class _MyImageColorSizeDesWidgetState extends State<MyImageColorSizeDesWidget> {
+  //function select Size
+  void _selectSize(int index) {
+    setState(
+      () {
+        currentSize = index;
+        listsize.length;
+      },
+    );
+  }
+
+  //select colors
+  void _selectColors(int index) {
+    setState(() {
+      currentColor = index;
+    });
+  }
+
+  //function sle
+
   @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
@@ -50,7 +78,7 @@ class _MyImageColorSizeDesWidgetState extends State<MyImageColorSizeDesWidget> {
                     children: [
                       //price
                       Text(
-                        '\$${widget.menModel.price}',
+                        '${widget.menModel.price}\$',
                         style: fontsPriceDetail,
                       ),
                       const Icon(
@@ -61,129 +89,76 @@ class _MyImageColorSizeDesWidgetState extends State<MyImageColorSizeDesWidget> {
                   )
                 ],
               ),
-
               //Color
               Padding(
-                padding: const EdgeInsets.only(top: 15),
+                padding: EdgeInsets.only(
+                  top: widget.height * 0.012,
+                ),
                 child: Row(
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.only(right: 10),
-                      child: Text(
-                        'Colors ',
-                        style: fontsTopic,
-                      ),
+                    Text(
+                      'Color'.toUpperCase(),
+                      style: fontsTopic,
                     ),
-                    //color
                     Padding(
-                      padding: EdgeInsets.only(
-                        right: widget.width * 0.02,
-                      ),
-                      child: Container(
-                        height: widget.height * 0.038,
-                        width: widget.width * 0.08,
-                        decoration: BoxDecoration(
-                          color: widget.menModel.color,
-                          border: widget.menModel.color == null
-                              ? null
-                              : Border.all(
-                                  width: 1,
-                                  color: Colors.black26,
+                      padding: EdgeInsets.only(left: widget.width * 0.029),
+                      child: Row(
+                        children: List.generate(
+                          listColors.length,
+                          (index) {
+                            return Padding(
+                              padding: EdgeInsets.only(
+                                right: widget.width * 0.02,
+                              ),
+                              child: Container(
+                                height: widget.height * 0.04,
+                                width: widget.width * 0.08,
+                                decoration: BoxDecoration(
+                                  color: listColors[index],
+                                  border: Border.all(
+                                    color: Colors.black26,
+                                  ),
                                 ),
-                        ),
-                      ),
-                    ),
-                    //color1
-                    Padding(
-                      padding: EdgeInsets.only(
-                        right: widget.width * 0.02,
-                      ),
-                      child: Container(
-                        height: widget.height * 0.038,
-                        width: widget.width * 0.08,
-                        decoration: BoxDecoration(
-                          color: widget.menModel.color1,
-                          border: widget.menModel.color1 == null
-                              ? null
-                              : Border.all(
-                                  width: 1,
-                                  color: Colors.black26,
-                                ),
-                        ),
-                      ),
-                    ),
-                    //color2
-                    Padding(
-                      padding: EdgeInsets.only(
-                        right: widget.width * 0.02,
-                      ),
-                      child: Container(
-                        height: widget.height * 0.038,
-                        width: widget.width * 0.08,
-                        decoration: BoxDecoration(
-                          color: widget.menModel.color2,
-                          border: widget.menModel.color2 == null
-                              ? null
-                              : Border.all(
-                                  width: 1,
-                                  color: Colors.black26,
-                                ),
-                        ),
-                      ),
-                    ),
-                    //color3
-                    Padding(
-                      padding: EdgeInsets.only(
-                        right: widget.width * 0.02,
-                      ),
-                      child: Container(
-                        height: widget.height * 0.038,
-                        width: widget.width * 0.08,
-                        decoration: BoxDecoration(
-                          color: widget.menModel.color3,
-                          border: widget.menModel.color3 == null
-                              ? null
-                              : Border.all(
-                                  width: 1,
-                                  color: Colors.black26,
-                                ),
+                              ),
+                            );
+                          },
                         ),
                       ),
                     ),
                   ],
                 ),
               ),
+
               //size
               Padding(
                 padding: const EdgeInsets.only(top: 20),
                 child: Row(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(right: 10),
+                      padding: const EdgeInsets.only(right: 8),
                       child: Text(
-                        'Size      ',
+                        'Size      '.toUpperCase(),
                         style: fontsTopic,
                       ),
                     ),
-                    for (int i = 0; i < 5; i++)
+                    for (int index = 0; index < listsize.length; index++)
                       Padding(
                         padding: const EdgeInsets.only(
                           right: 10,
                         ),
-                        //
+                        //select size
                         child: GestureDetector(
                           onTap: () {
-                            setState(() {
-                              currentSize = i;
-                            });
+                            _selectSize(index);
+
+                            print(index);
                           },
-                          child: currentSize == i
+                          child: index == currentSize
                               ? Container(
                                   alignment: Alignment.center,
                                   padding: const EdgeInsets.all(2),
                                   decoration: BoxDecoration(
                                     color: Colors.grey,
-                                    borderRadius: BorderRadius.circular(5),
                                     border: Border.all(
                                       width: 1.5,
                                       color: Colors.grey,
@@ -194,7 +169,7 @@ class _MyImageColorSizeDesWidgetState extends State<MyImageColorSizeDesWidget> {
                                       horizontal: 10,
                                     ),
                                     child: Text(
-                                      widget.listsize[i],
+                                      listsize[index],
                                       style: fontsNameShirtDetail,
                                     ),
                                   ),
@@ -203,7 +178,6 @@ class _MyImageColorSizeDesWidgetState extends State<MyImageColorSizeDesWidget> {
                                   alignment: Alignment.center,
                                   padding: const EdgeInsets.all(2),
                                   decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(5),
                                     border: Border.all(
                                       width: 1.5,
                                       color: Colors.grey,
@@ -214,7 +188,7 @@ class _MyImageColorSizeDesWidgetState extends State<MyImageColorSizeDesWidget> {
                                       horizontal: 10,
                                     ),
                                     child: Text(
-                                      widget.listsize[i],
+                                      listsize[index],
                                       style: fontsNameShirtDetail,
                                     ),
                                   ),
@@ -228,51 +202,42 @@ class _MyImageColorSizeDesWidgetState extends State<MyImageColorSizeDesWidget> {
               //Description
               Padding(
                 padding: const EdgeInsets.only(top: 15),
-                child: Container(
-                  // height: height * 0.1,
-                  // width: width,
-                  //color: Colors.blue,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Description',
-                        style: fontsTopic,
-                      ),
-                      const SizedBox(
-                        height: 5,
-                      ),
-                      Text(
-                        widget.menModel.des,
-                        style: fontsNameShirt,
-                      ),
-                    ],
-                  ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    //description
+                    Text(
+                      'Description'.toUpperCase(),
+                      style: fontsTopic,
+                    ),
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    Text(
+                      widget.menModel.des,
+                      style: fontsNameShirt,
+                    ),
+                  ],
                 ),
               ),
               //Composition
               Padding(
                 padding: const EdgeInsets.only(top: 15),
-                child: Container(
-                  // height: height * 0.1,
-                  // width: width,
-                  //color: Colors.blue,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Composition',
-                        style: fontsTopic,
-                      ),
-                      const SizedBox(
-                        height: 5,
-                      ),
-                      Text(
-                        widget.menModel.composition,
-                        style: fontsNameShirt,
-                      ),
-                    ],
-                  ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Composition'.toUpperCase(),
+                      style: fontsTopic,
+                    ),
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    Text(
+                      widget.menModel.composition,
+                      style: fontsNameShirt,
+                    ),
+                  ],
                 ),
               ),
             ],
