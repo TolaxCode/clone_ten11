@@ -11,26 +11,50 @@ class Products extends ChangeNotifier {
 
   //add item to cart
   void addMenItemToCart(MenModel menModel) {
-    cartMenItem.add(menModel);
+    _cartMenItem.add(menModel);
     notifyListeners();
   }
 
   //remove item from cart
   void removeMenItemFromCart(MenModel menModel) {
-    cartMenItem.remove(menModel);
+    _cartMenItem.remove(menModel);
     notifyListeners();
   }
 
   //calculate price
-  double calculateMenTotal(MenModel menModel) {
+  double calculateMenTotal() {
     double total = 0;
     for (int i = 0; i < cartMenItem.length; i++) {
-      total += menModel.price;
+      total += _cartMenItem[i].price;
     }
     notifyListeners();
     return total;
   }
 
   //list women
-  final List<WowmenModel> _cartWomenItem = [];
+  final List<WomenModel> _cartWomen = [];
+  //get list cart women item
+  List<WomenModel> get cartWomen => _cartWomen;
+
+  //add item to cart
+  void addWomenItemToCart(WomenModel womenModel) {
+    cartWomen.add(womenModel);
+    notifyListeners();
+  }
+
+  //remove item from cart
+  void removeWomenItemFromCart(WomenModel womenModel) {
+    cartWomen.remove(womenModel);
+    notifyListeners();
+  }
+
+  //calculate price
+  double calculateWomenTotal() {
+    double total = 0;
+    for (int i = 0; i < cartWomen.length; i++) {
+      total += cartWomen[i].price;
+    }
+    notifyListeners();
+    return total;
+  }
 }

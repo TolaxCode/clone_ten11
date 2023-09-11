@@ -29,7 +29,7 @@ class MyGridHighlightWidget extends StatelessWidget {
           ),
           itemBuilder: (context, index) {
             var data = listMenModel[index];
-            var data1 = listWowmenModel[index];
+            var data1 = listWomenModel[index];
             return Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.start,

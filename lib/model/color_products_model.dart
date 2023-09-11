@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-List<Color> listColors = [
+List<Color> _listColors = [
   Colors.black,
   Colors.white,
   Colors.brown,
 ];
+get listColors => _listColors;

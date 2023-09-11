@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 
 class MenModel {
   String image;
@@ -20,7 +19,7 @@ List<MenModel> _listMenModel = [
   MenModel(
     image: 'assets/men/m1.jpg',
     name: 'Slim Fit Jeans',
-    price: 14.36,
+    price: 17,
     des:
         'Knit joggers featuring side pockets with zipper, one pocket on the leg and elastic waistband.one pocket on the leg and elastic waistband.',
     composition: '63.9% Cotton 36.1% Polyester',
@@ -28,7 +27,7 @@ List<MenModel> _listMenModel = [
   MenModel(
     image: 'assets/men/m17.jpg',
     name: 'Slim Fit Trousers',
-    price: 17.74,
+    price: 25,
     des:
         'Knit joggers featuring side pockets, graphic print at the front and elastic waistband.',
     composition: '63.9% Cotton 36.1% Polyester',
@@ -36,7 +35,7 @@ List<MenModel> _listMenModel = [
   MenModel(
     image: 'assets/men/m2.jpg',
     name: 'T-shirt with Print',
-    price: 26.67,
+    price: 18,
     des:
         'Regular fit knit trousers featuring side pockets with zipper fastening and adjustable elastic waistband.',
     composition: '63.9% Cotton 36.1% Polyester',
@@ -44,7 +43,7 @@ List<MenModel> _listMenModel = [
   MenModel(
     image: 'assets/men/m4.jpg',
     name: 'Premium Polo Shirt',
-    price: 21.75,
+    price: 21,
     des:
         'Regular fit knit trousers featuring side pockets with zipper fastening and adjustable elastic waistband.',
     composition: '63.9% Cotton 36.1% Polyester',
@@ -52,7 +51,7 @@ List<MenModel> _listMenModel = [
   MenModel(
     image: 'assets/men/m5.jpg',
     name: 'Basic Tank Top',
-    price: 16.36,
+    price: 16,
     des:
         'Regular fit knit trousers featuring side pockets with zipper fastening and adjustable elastic waistband.',
     composition: '63.9% Cotton 36.1% Polyester',
@@ -60,7 +59,7 @@ List<MenModel> _listMenModel = [
   MenModel(
     image: 'assets/men/m6.jpg',
     name: 'Crewneck T-shirt',
-    price: 26.87,
+    price: 26,
     des:
         'Regular fit knit trousers featuring side pockets with zipper fastening and adjustable elastic waistband.',
     composition: '63.9% Cotton 36.1% Polyester',
@@ -68,7 +67,7 @@ List<MenModel> _listMenModel = [
   MenModel(
     image: 'assets/men/m7.jpg',
     name: 'Sweatshirt with Print',
-    price: 16.11,
+    price: 20,
     des:
         'Regular fit knit trousers featuring side pockets with zipper fastening and adjustable elastic waistband.',
     composition: '63.9% Cotton 36.1% Polyester',
@@ -76,7 +75,7 @@ List<MenModel> _listMenModel = [
   MenModel(
     image: 'assets/men/m8.jpg',
     name: 'Technical Cargo Jogger',
-    price: 18.36,
+    price: 15,
     des:
         'Regular fit knit trousers featuring side pockets with zipper fastening and adjustable elastic waistband.',
     composition: '63.9% Cotton 36.1% Polyester',
@@ -84,7 +83,7 @@ List<MenModel> _listMenModel = [
   MenModel(
     image: 'assets/men/m9.jpg',
     name: 'Printed Swimming Shorts',
-    price: 19.56,
+    price: 25,
     des:
         'Regular fit knit trousers featuring side pockets with zipper fastening and adjustable elastic waistband.',
     composition: '63.9% Cotton 36.1% Polyester',
@@ -100,7 +99,7 @@ List<MenModel> _listMenModel = [
   MenModel(
     image: 'assets/men/m11.jpg',
     name: 'T-shirt With Print',
-    price: 25.36,
+    price: 23,
     des:
         'Regular fit knit trousers featuring side pockets with zipper fastening and adjustable elastic waistband.',
     composition: '63.9% Cotton 36.1% Polyester',
@@ -108,7 +107,7 @@ List<MenModel> _listMenModel = [
   MenModel(
     image: 'assets/men/m12.jpg',
     name: 'Straight Corduroy Shorts',
-    price: 13.27,
+    price: 13,
     des:
         'Regular fit knit trousers featuring side pockets with zipper fastening and adjustable elastic waistband.',
     composition: '63.9% Cotton 36.1% Polyester',
@@ -116,7 +115,7 @@ List<MenModel> _listMenModel = [
   MenModel(
     image: 'assets/men/m13.jpg',
     name: 'Hoodie With Print',
-    price: 24.66,
+    price: 24,
     des:
         'Regular fit knit trousers featuring side pockets with zipper fastening and adjustable elastic waistband.',
     composition: '63.9% Cotton 36.1% Polyester',
@@ -132,7 +131,7 @@ List<MenModel> _listMenModel = [
   MenModel(
     image: 'assets/men/m15.jpg',
     name: 'Cargo Trousers',
-    price: 18.36,
+    price: 18,
     des:
         'Regular fit knit trousers featuring side pockets with zipper fastening and adjustable elastic waistband.',
     composition: '63.9% Cotton 36.1% Polyester',
@@ -140,7 +139,7 @@ List<MenModel> _listMenModel = [
   MenModel(
     image: 'assets/men/m16.jpg',
     name: 'Sweatshirt With Print',
-    price: 23.36,
+    price: 23,
     des:
         'Regular fit knit trousers featuring side pockets with zipper fastening and adjustable elastic waistband.',
     composition: '63.9% Cotton 36.1% Polyester',
@@ -148,7 +147,7 @@ List<MenModel> _listMenModel = [
   MenModel(
     image: 'assets/men/m17.jpg',
     name: 'Sweatpants With Print',
-    price: 19.16,
+    price: 19,
     des:
         'Regular fit knit trousers featuring side pockets with zipper fastening and adjustable elastic waistband.',
     composition: '63.9% Cotton 36.1% Polyester',
@@ -156,7 +155,7 @@ List<MenModel> _listMenModel = [
   MenModel(
     image: 'assets/men/m18.jpg',
     name: 'Sweatshirt With Print',
-    price: 19.67,
+    price: 16,
     des:
         'Regular fit knit trousers featuring side pockets with zipper fastening and adjustable elastic waistband.',
     composition: '63.9% Cotton 36.1% Polyester',
@@ -164,7 +163,7 @@ List<MenModel> _listMenModel = [
   MenModel(
     image: 'assets/men/m19.jpg',
     name: 'Jogging Trousers',
-    price: 16.66,
+    price: 17,
     des:
         'Regular fit knit trousers featuring side pockets with zipper fastening and adjustable elastic waistband.',
     composition: '63.9% Cotton 36.1% Polyester',

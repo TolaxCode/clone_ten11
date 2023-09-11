@@ -36,13 +36,16 @@ class MyCollectionWidget extends StatelessWidget {
               //color: Colors.blue,
               child: Column(
                 children: [
-                  Container(
-                    height: height * 0.36,
-                    width: width / 2,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage(imageCollection),
-                        fit: BoxFit.cover,
+                  Hero(
+                    tag: imageCollection,
+                    child: Container(
+                      height: height * 0.36,
+                      width: width / 2,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(imageCollection),
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                   ),

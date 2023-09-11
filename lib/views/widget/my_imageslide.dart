@@ -22,6 +22,9 @@ class MyImageSlideWidget extends StatelessWidget {
           height: height * 0.35,
           isLoop: true,
           autoPlayInterval: 4000,
+          indicatorBackgroundColor: Colors.white,
+          indicatorColor: Colors.black,
+          indicatorRadius: 5,
           children: [
             for (int i = 0; i < listImageSlide.length; i++)
               Container(

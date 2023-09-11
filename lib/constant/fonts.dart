@@ -57,3 +57,9 @@ var fontsAppbar = GoogleFonts.poppins(
   fontWeight: FontWeight.w600,
   color: Colors.black,
 );
+
+var fontsDesCom = GoogleFonts.poppins(
+  fontSize: 17,
+  fontWeight: FontWeight.w500,
+  color: Colors.grey[600],
+);

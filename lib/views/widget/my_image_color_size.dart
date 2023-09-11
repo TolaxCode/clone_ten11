@@ -215,7 +215,7 @@ class _MyImageColorSizeDesWidgetState extends State<MyImageColorSizeDesWidget> {
                     ),
                     Text(
                       widget.menModel.des,
-                      style: fontsNameShirt,
+                      style: fontsDesCom,
                     ),
                   ],
                 ),
@@ -235,7 +235,7 @@ class _MyImageColorSizeDesWidgetState extends State<MyImageColorSizeDesWidget> {
                     ),
                     Text(
                       widget.menModel.composition,
-                      style: fontsNameShirt,
+                      style: fontsDesCom,
                     ),
                   ],
                 ),
